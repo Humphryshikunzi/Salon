@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Salon.Views.SignUpPage"
+             xmlns:localViewModel="clr-namespace:Salon.ViewModels"
+              BackgroundImageSource="SignUpImage2.jpeg"  
+             Title="Sign Up">
+    <ContentPage.BindingContext>
+        <localViewModel:SignUpViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Margin="8">
+            <Label Text="Welcome User"
+                  FontSize="Title"
+                   Margin="0,8,0,0"/>
+            <Label Text="Sign up to join"
+                   FontSize="Large"
+                    Margin="0,0,0,8"/>
+            <Entry Placeholder="Name"
+                   Text="{Binding Name, Mode=TwoWay}"/>
+            <Entry Placeholder="Email"
+                   Text="{Binding Email, Mode=TwoWay}"
+                   Keyboard="Email"/>
+            <Entry Placeholder="Password"
+                   IsPassword="True"
+                   Text="{Binding Password, Mode=TwoWay}"/>
+            <Entry Placeholder="Confirm Password"
+                   Text="{Binding ConfirmPassword, Mode=TwoWay}"
+                   IsPassword="True"
+                    Margin="0,0,0,8"/>
+            <Label Text="Are you a Customer, Salon Owner or Salonist?"
+                   />
+            <Picker SelectedItem="{Binding ModeOfSignUp, Mode=TwoWay}"
+                Title="--select--">
+                <Picker.Items>
+                    <x:String>Customer</x:String>
+                    <x:String>Salon Owner</x:String>
+                    <x:String>Salonist</x:String>
+                </Picker.Items>
+            </Picker>
+            <StackLayout Orientation="Horizontal"
+                          Margin="0,0,0,8">
+                <CheckBox IsChecked="{Binding IsTermsAndConditionsCheckBoxChecked, Mode=TwoWay}"
+                          />
+                <Label VerticalOptions="CenterAndExpand">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="I agree to the Terms and Conditions"/>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding IsTermsAndConditionsCheckBoxChecked}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
+            <Button Text="Sign up"
+                    Margin="0,0,0,30"
+                    Command="{Binding SignUpCommand}"
+                    CommandParameter="{Binding SignUp}"/>
+            <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="CenterAndExpand">
+                <Label Text="Have an account?"
+                       FontSize="Large"/>
+                <Label Text="Sign in"
+                       Margin="10,0"
+                       FontSize="Large">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SignInCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

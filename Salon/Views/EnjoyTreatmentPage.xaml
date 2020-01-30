@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Salon.Views.EnjoyTreatmentPage"
+              xmlns:localViewModel="clr-namespace:Salon.ViewModels"
+             Title="Enjoy Treatment"
+             >
+    <ContentPage.BindingContext>
+        <localViewModel:IntroductionViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Margin="9">
+            <Label Text="Enjoy your treatment"
+                   FontSize="Title"
+                   TextColor="Black"/>
+            <Label Text="Sit back and relax to enjoy a treatment that makes you happpy all day"
+                   FontSize="Large"/>
+            <Image Source="EnjoyTreatment"
+                   Aspect="AspectFill"
+                   />
+            <StackLayout Orientation="Horizontal"
+                         Margin="20,0,0,0">
+                <StackLayout WidthRequest="100">
+                    <Label Text="01/03"
+                           FontSize="Large"/>
+                    <ProgressBar
+                        BackgroundColor="Gray"
+                        HeightRequest="6"/>
+                </StackLayout>
+                <StackLayout WidthRequest="100">
+                    <Label Text="02/03"
+                           FontSize="Large"/>
+                    <ProgressBar
+                        BackgroundColor="Gray"
+                        HeightRequest="6"/>
+                </StackLayout>
+                <StackLayout WidthRequest="100">
+                    <Label Text="03/03"
+                           FontSize="Large"/>
+                    <ProgressBar
+                           BackgroundColor="Gray"
+                           HeightRequest="6"
+                           />
+                </StackLayout>
+            </StackLayout>
+            <Button Text="Next"
+                    Margin="0,10,0,0"
+                    Command="{Binding NavigateToSignUpPageCommand }"/>
+            <!--<StackLayout.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Left" Command="{Binding SwipeRightToSignUpPagePageCommand}"/>
+                <SwipeGestureRecognizer Direction="Right" Command="{Binding SwipeLeftToSaveFavoritesPageCommand}"/>
+            </StackLayout.GestureRecognizers>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
