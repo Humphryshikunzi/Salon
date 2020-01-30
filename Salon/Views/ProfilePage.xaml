@@ -6,10 +6,91 @@
              mc:Ignorable="d"
              x:Class="Salon.Views.ProfilePage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0"
+                  >
+                <Image Source="Profile"
+                       Aspect="Fill">
+
+                </Image>
+            </Grid>
+            <Grid Grid.Row="0">
+                <StackLayout HorizontalOptions="StartAndExpand"
+                             VerticalOptions="EndAndExpand">
+                    <Label Text="Humphry Shikunzi"
+                           FontSize="Large"/>
+                    <Label Text="humphry97@outlook.com"
+                           FontSize="Small"
+                           />
+
+                </StackLayout>
+            </Grid>
+            <Grid Grid.Row="0">
+                <StackLayout HorizontalOptions="EndAndExpand"
+                             VerticalOptions="EndAndExpand">
+                    <Label Text="Edit"/>
+
+                </StackLayout>
+
+            </Grid>
+
+            <Grid Grid.Row="1"
+                  Margin="0,18">
+                <StackLayout>
+                    <Label Text="Accounts"
+                           FontSize="Title"/>
+                    <StackLayout Orientation="Horizontal"
+                                 Margin="5">
+
+                        <Image 
+                           />
+                        <Label Text="Change pasword">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Image />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal"
+                                 Margin="5">
+                        <Image 
+                          />
+                        <Label Text="Privacy policy" >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Image />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal"
+                                 Margin="5">
+                        <Image 
+                          />
+                        <Label Text="Notification">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Image />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal"
+                                 Margin="5">
+                        <Image 
+                           />
+                        <Label Text="Sign Out"
+                               FontSize="Large">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Image />
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

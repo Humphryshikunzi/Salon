@@ -5,12 +5,56 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Salon.Views.FavoritesPage"
-             Title="Favorites">
+             Title="Favorites"
+             xmlns:localViewModel="clr-namespace:Salon.ViewModels">
+    <ContentPage.BindingContext>
+        <localViewModel:FavoritesViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <!--By default, Favorite Salons Will Be displayed on FrontPage-->
+        <ToolbarItem Text="Stylists"
+                     Priority="1" 
+                     Order="Secondary"
+                     Command="{Binding NavigateToFavoriteSalonistsPagePageCommand}"/>
+        <ToolbarItem Text="Products" 
+                     Priority="2" 
+                     Order="Secondary"
+                     Command="{Binding  NavigateToFavoriteProductsPageCommand}"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView HorizontalScrollBarVisibility="Never"
+                    VerticalScrollBarVisibility="Never">
+            <StackLayout Margin="8">
+                <TableView HasUnevenRows="True"
+                          >
+                    <TableSection>
+                        <ViewCell>
+                            <StackLayout >
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Favorite Salons"
+                                           HorizontalOptions="Start"
+                                           FontSize="Large"/>
+
+                                </StackLayout>
+                                <StackLayout 
+                                             Margin="0,0,0,40" >
+                                    <Image Source="Salon5"
+                                                   Aspect="AspectFill"
+                                                   HeightRequest="160"/>
+                                    <Label Text="Christoper Salon"
+                                                   HorizontalTextAlignment="Center"/>
+                                    <Image Source="Salon6"
+                                                   Aspect="AspectFill"
+                                                   HeightRequest="160"/>
+                                    <Label Text="Christoper Salon"
+                                                   HorizontalTextAlignment="Center"/>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

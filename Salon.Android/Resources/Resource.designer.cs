@@ -8358,31 +8358,64 @@ namespace Salon.Droid
 			public const int notify_panel_notification_icon_bg = 2131165301;
 			
 			// aapt resource value: 0x7F070076
-			public const int ProductsImage3 = 2131165302;
+			public const int Package1 = 2131165302;
 			
 			// aapt resource value: 0x7F070077
-			public const int SalonistPageBackgroundImage = 2131165303;
+			public const int Package2 = 2131165303;
 			
 			// aapt resource value: 0x7F070078
-			public const int SalonOwnerPageBackgroundImage = 2131165304;
+			public const int Product2 = 2131165304;
 			
 			// aapt resource value: 0x7F070079
-			public const int SalonOwnerServicesPageBackgroundImage = 2131165305;
+			public const int Product4 = 2131165305;
 			
 			// aapt resource value: 0x7F07007A
-			public const int SaveFavorites = 2131165306;
+			public const int ProductsImage3 = 2131165306;
 			
 			// aapt resource value: 0x7F07007B
-			public const int SignUpImage2 = 2131165307;
+			public const int Profile = 2131165307;
 			
 			// aapt resource value: 0x7F07007C
-			public const int Splashscreen = 2131165308;
+			public const int Salon5 = 2131165308;
 			
 			// aapt resource value: 0x7F07007D
-			public const int tooltip_frame_dark = 2131165309;
+			public const int Salon6 = 2131165309;
 			
 			// aapt resource value: 0x7F07007E
-			public const int tooltip_frame_light = 2131165310;
+			public const int Salonist1 = 2131165310;
+			
+			// aapt resource value: 0x7F07007F
+			public const int Salonist2 = 2131165311;
+			
+			// aapt resource value: 0x7F070080
+			public const int Salonist3 = 2131165312;
+			
+			// aapt resource value: 0x7F070081
+			public const int Salonist4 = 2131165313;
+			
+			// aapt resource value: 0x7F070082
+			public const int SalonistPageBackgroundImage = 2131165314;
+			
+			// aapt resource value: 0x7F070083
+			public const int SalonOwnerPageBackgroundImage = 2131165315;
+			
+			// aapt resource value: 0x7F070084
+			public const int SalonOwnerServicesPageBackgroundImage = 2131165316;
+			
+			// aapt resource value: 0x7F070085
+			public const int SaveFavorites = 2131165317;
+			
+			// aapt resource value: 0x7F070086
+			public const int SignUpImage2 = 2131165318;
+			
+			// aapt resource value: 0x7F070087
+			public const int Splashscreen = 2131165319;
+			
+			// aapt resource value: 0x7F070088
+			public const int tooltip_frame_dark = 2131165320;
+			
+			// aapt resource value: 0x7F070089
+			public const int tooltip_frame_light = 2131165321;
 			
 			static Drawable()
 			{

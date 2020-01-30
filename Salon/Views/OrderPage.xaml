@@ -4,12 +4,160 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Salon.Views.OrderPage">
+             x:Class="Salon.Views.OrderPage"
+             xmlns:localViewModel="clr-namespace:Salon.ViewModels">
+    <ContentPage.BindingContext>
+        <localViewModel:OrdersViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <!--By Default, All will be diplayed on This Frontpage-->
+        <ToolbarItem Text="Appointments" 
+                     Priority="1"
+                     Order="Secondary"
+                     Command="{Binding  NavigateToAppointmentsPageCommand}"/>
+        <ToolbarItem Text="Products" 
+                     Priority="2" 
+                     Order="Secondary"
+                     Command="{Binding  NavigateToProductsPageCommand}"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView HorizontalScrollBarVisibility="Never"
+                    VerticalScrollBarVisibility="Never">
+            <StackLayout Margin="8">
+                <TableView HasUnevenRows="True"
+                          >
+                    <TableSection >
+                        <ViewCell>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Services"
+                                           HorizontalOptions="Start"
+                                           FontSize="Large"/>
+                                    <Label Text="See All"
+                                           HorizontalOptions="EndAndExpand"
+                                           FontSize="Large"
+                                           Margin="0,0,8,0">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal"
+                                             >
+                                    <Grid Margin="0,0,8,0">
+                                        <StackLayout>
+                                            <Image Source="SalonistPageBackgroundImage"/>
+                                            <Label Text="Hair Styling"
+                                                   HorizontalTextAlignment="Center"/>
+                                        </StackLayout>
+                                    </Grid>
+                                    <Grid>
+                                        <StackLayout>
+                                            <Image Source="SalonOwnerPageBackgroundImage"/>
+                                            <Label Text="Face and Skin" 
+                                                   HorizontalTextAlignment="Center"/>
+                                        </StackLayout>
+
+                                    </Grid>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection>
+                        <ViewCell>
+                            <StackLayout  >
+                                <StackLayout Orientation="Horizontal" >
+                                    <Label Text="Products"
+                                           HorizontalOptions="Start"
+                                           FontSize="Large"/>
+                                    <Label Text="See All"
+                                           HorizontalOptions="EndAndExpand"
+                                           FontSize="Large"
+                                           Margin="0,0,8,0">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer />
+                                        </Label.GestureRecognizers>
+
+                                    </Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal"
+                                            Margin="0,0,0,40" >
+                                    <Grid Margin="0,0,8,0">
+                                        <StackLayout>
+                                            <Image Source="ProductsImage3.jpeg"
+                                                   Aspect="AspectFill"
+                                                   HeightRequest="120"
+                                                  />
+                                            <Label Text="Product 1"
+                                                   HorizontalTextAlignment="Center"/>
+                                        </StackLayout>
+                                    </Grid>
+                                    <Grid Margin="0,0,8,0"
+                                          >
+                                        <StackLayout>
+                                            <Image 
+                                            Source="Product4"
+                                            Aspect="AspectFill"
+                                                HeightRequest="120"/>
+                                            <Label Text="Product 2"
+                                                   HorizontalTextAlignment="Center"/>
+                                        </StackLayout>
+                                    </Grid>
+                                    <Grid  >
+                                        <StackLayout >
+                                            <Image Source="Product4"
+                                               Aspect="AspectFill"
+                                                   HeightRequest="120"/>
+                                            <Label Text="Product 3"
+                                                   HorizontalTextAlignment="Center"/>
+                                        </StackLayout>
+                                    </Grid>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection>
+                        <ViewCell>
+                            <StackLayout >
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Packages"
+                                           HorizontalOptions="Start"
+                                           FontSize="Large"/>
+                                    <Label Text="See All"
+                                           HorizontalOptions="EndAndExpand"
+                                           FontSize="Large"
+                                           Margin="0,0,8,0">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer />
+                                        </Label.GestureRecognizers>
+
+                                    </Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Grid>
+                                        <StackLayout>
+                                            <Image Source="Package1"
+                                               Aspect="AspectFill"
+                                                   HeightRequest="180"/>
+                                            <Label Text="Package1"
+                                                   HorizontalTextAlignment="Center"/>
+                                        </StackLayout>
+                                    </Grid>
+                                    <Grid>
+                                        <StackLayout>
+                                            <Image Source="Package2"
+                                               Aspect="AspectFill"
+                                                   HeightRequest="180"/>
+                                            <Label Text="Package2"
+                                                   HorizontalTextAlignment="Center"/>
+                                        </StackLayout>
+                                    </Grid>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
