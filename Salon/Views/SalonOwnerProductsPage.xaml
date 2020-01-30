@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Salon.Views.SalonOwnerProductsPage"
+             xmlns:localViewModel="clr-namespace:Salon.ViewModels"
+              BackgroundImageSource="ProductsImage3">
+    <ContentPage.BindingContext>
+        <localViewModel:SalonOwnerProductsViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Margin="8"
+                     VerticalOptions="CenterAndExpand">
+            <Label Text="What products does your Salon have?"
+                   FontSize="Large"
+                   Margin="0,0,0,30"/>
+            <StackLayout Orientation="Horizontal"
+                         Margin="0,0,0,20">
+                <Entry Placeholder="Name of Product"
+                       FontSize="Large"
+                       TextColor="Black"
+                       WidthRequest="180"
+                       Text="{Binding ProductName}"/>
+                <Button Text="UpLoad Image"
+                        WidthRequest="150"
+                        BackgroundColor="LightGray"
+                        Command="{Binding UploadProductImageCommand}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Price for the Product"
+                       FontSize="Large"
+                       VerticalTextAlignment="Center"
+                       WidthRequest="180"/>
+                <Entry Text="{Binding Price}"
+                       WidthRequest="150"
+                       VerticalTextAlignment="Center"
+                       Keyboard="Numeric"
+                       />
+            </StackLayout>
+            <Button Text="Add Product"
+                    Margin="0,0,0,80"
+                    Command="{Binding AddProductCommand}"/>
+            <Label Text="Finished Adding Products?"
+                   FontSize="Large"
+                   HorizontalOptions="CenterAndExpand">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding FinishedAddingProductsCommand}"
+                                         />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

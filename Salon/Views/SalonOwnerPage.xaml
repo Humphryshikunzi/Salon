@@ -5,12 +5,38 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Salon.Views.SalonOwnerPage"
-             Title="Salon Owner">
+             Title="Salon Owner"
+             BackgroundImageSource="SalonOwnerPageBackgroundImage"
+             xmlns:localViewModel="clr-namespace:Salon.ViewModels">
+    <ContentPage.BindingContext>
+        <localViewModel:SalonOwnerViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="8"
+                     VerticalOptions="CenterAndExpand">
+            <Label Text="Please help us in setting an account for your Salon"
+                   FontSize="Large"/>
+            <Entry Placeholder="Name of Salon"
+                   Text="{Binding NameOfSalon, Mode=TwoWay}"/>
+            <Entry Placeholder="City in which your Salon is Located"
+                   Text="{Binding City, Mode=TwoWay}"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Number of Salonists in your Salon"
+                       FontSize="Large"
+                       VerticalOptions="Center"
+                       Margin="0,0,10,0"/>
+                <Entry 
+                   Text="{Binding NumberOfSalonists, Mode=TwoWay}"
+                   Keyboard="Numeric"
+                   VerticalOptions="Center"
+                    WidthRequest="50"
+                    />
+            </StackLayout>
+
+            <Button Text="Create  Salonists' Accounts"
+                    Command="{Binding CreateSalonAccountCommand}"
+                    CommandParameter="{Binding SalonOwnerAccount}"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

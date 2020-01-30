@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Salon.Views.SalonistAccountPage"
+             xmlns:localViewModel="clr-namespace:Salon.ViewModels"
+             BackgroundImageSource="SalonistPageBackgroundImage">
+    <ContentPage.BindingContext>
+        <localViewModel:SalonistAccountViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Margin="20"
+                     VerticalOptions="CenterAndExpand">
+            <Label Text="Set the Credentials for Salonist"
+                 FontSize="Large"/>
+            <Entry Placeholder="User Name"
+                   Text="{Binding UserName}"/>
+            <Entry Placeholder="Email"
+                   Text="{Binding Email}"/>
+            <Button Text="Submit"
+                    Command="{Binding AddSalonistCommand}"
+                    CommandParameter="{Binding Salonist}">
+
+            </Button>
+            <Label Margin="0,50,0,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="An email will be automaticaly send to the Salonist with a random password, they should change it at Sign Up"/>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Margin="0,50,0,0"
+                   Text="Finished Adding Salonists?"
+                   FontSize="Large"
+                   HorizontalOptions="CenterAndExpand">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding FinishedAddingSalonistsCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

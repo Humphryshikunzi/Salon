@@ -8358,19 +8358,31 @@ namespace Salon.Droid
 			public const int notify_panel_notification_icon_bg = 2131165301;
 			
 			// aapt resource value: 0x7F070076
-			public const int SaveFavorites = 2131165302;
+			public const int ProductsImage3 = 2131165302;
 			
 			// aapt resource value: 0x7F070077
-			public const int SignUpImage2 = 2131165303;
+			public const int SalonistPageBackgroundImage = 2131165303;
 			
 			// aapt resource value: 0x7F070078
-			public const int Splashscreen = 2131165304;
+			public const int SalonOwnerPageBackgroundImage = 2131165304;
 			
 			// aapt resource value: 0x7F070079
-			public const int tooltip_frame_dark = 2131165305;
+			public const int SalonOwnerServicesPageBackgroundImage = 2131165305;
 			
 			// aapt resource value: 0x7F07007A
-			public const int tooltip_frame_light = 2131165306;
+			public const int SaveFavorites = 2131165306;
+			
+			// aapt resource value: 0x7F07007B
+			public const int SignUpImage2 = 2131165307;
+			
+			// aapt resource value: 0x7F07007C
+			public const int Splashscreen = 2131165308;
+			
+			// aapt resource value: 0x7F07007D
+			public const int tooltip_frame_dark = 2131165309;
+			
+			// aapt resource value: 0x7F07007E
+			public const int tooltip_frame_light = 2131165310;
 			
 			static Drawable()
 			{

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Salon.Views.SalonOwnerServicePage"
+             xmlns:localViewModel="clr-namespace:Salon.ViewModels"
+             BackgroundImageSource="SalonOwnerServicesPageBackgroundImage">
+    <ContentPage.BindingContext>
+        <localViewModel:SalonOwnerServicesViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Margin="8"
+                     VerticalOptions="CenterAndExpand">
+            <Label Text="Tell us the Services that your Salon offers so that we can direct the right Customers to you."/>
+            <Entry Placeholder="Enter Service"
+                   Text="{Binding Service, Mode=TwoWay}"/>
+            <Label Text="Charge for the Service(Ksh.)"
+                   FontSize="Large"/>
+            <Entry Placeholder="Charge(KSh.)"
+                   Text="{Binding Charge, Mode=TwoWay}"/>
+            <Button Text="Add"
+                    Command="{Binding AddSalonOwnerServiceCommand}"
+                    CommandParameter="{Binding SalonOwnerServices}">
+
+            </Button>
+            <Label Text="Finished Adding Services?"
+                   Margin="0,50,0,0"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="Large">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding AddSalonOwnerServiceCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
