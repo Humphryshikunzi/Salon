@@ -33,6 +33,10 @@
                     />
             </StackLayout>
 
+            <Button Text="Upload Salon Profile Image"
+                    Command="{Binding  UpLoadSalonProfileImageCommand}"
+                    BackgroundColor="LightGray"
+                    />
             <Button Text="Create  Salonists' Accounts"
                     Command="{Binding CreateSalonAccountCommand}"
                     CommandParameter="{Binding SalonOwnerAccount}"/>

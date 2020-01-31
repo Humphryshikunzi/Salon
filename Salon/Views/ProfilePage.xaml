@@ -21,9 +21,9 @@
             <Grid Grid.Row="0">
                 <StackLayout HorizontalOptions="StartAndExpand"
                              VerticalOptions="EndAndExpand">
-                    <Label Text="Humphry Shikunzi"
+                    <Label Text="Jackline  Mukami"
                            FontSize="Large"/>
-                    <Label Text="humphry97@outlook.com"
+                    <Label Text="mukamijackline@outlook.com"
                            FontSize="Small"
                            />
 
@@ -46,48 +46,72 @@
                     <StackLayout Orientation="Horizontal"
                                  Margin="5">
 
-                        <Image 
+                        <Image Source="ChangePasswordIcon.jpeg"
+                               HeightRequest="20"
+                               Margin="0,0,8,0"
                            />
-                        <Label Text="Change pasword">
+                        <Label Text="Change pasword"
+                               VerticalTextAlignment="Center">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer />
                             </Label.GestureRecognizers>
                         </Label>
-                        <Image />
+                        <Label HorizontalOptions="EndAndExpand"
+                               Text=">"
+                               FontSize="Title"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal"
+                                 >
+                        <Image 
+                            Source="PrivacyIcon.jpeg"
+                            HeightRequest="20"
+                            Margin="0,0,8,0"
+                            />
+                        <Label Text="Privacy policy" 
+                               VerticalTextAlignment="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label HorizontalOptions="EndAndExpand"
+                               Text=">"
+                               FontSize="Title"
+                               Margin="0,0,5,0"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal"
                                  Margin="5">
                         <Image 
+                             Source="NotificationsIcon"
+                             HeightRequest="20"
+                             Margin="0,0,8,0"
                           />
-                        <Label Text="Privacy policy" >
+                        <Label Text="Notification"
+                               VerticalTextAlignment="Center">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer />
                             </Label.GestureRecognizers>
                         </Label>
-                        <Image />
+                        <Label HorizontalOptions="EndAndExpand"
+                               Text=">"
+                               FontSize="Title"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal"
                                  Margin="5">
                         <Image 
-                          />
-                        <Label Text="Notification">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer />
-                            </Label.GestureRecognizers>
-                        </Label>
-                        <Image />
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal"
-                                 Margin="5">
-                        <Image 
+                            Source="SignOutIcon.jpeg"
+                             HeightRequest="20"
+                            Margin="0,0,8,0"
                            />
                         <Label Text="Sign Out"
-                               FontSize="Large">
+                               VerticalTextAlignment="Center"
+                               >
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer />
                             </Label.GestureRecognizers>
                         </Label>
-                        <Image />
+                        <Label HorizontalOptions="EndAndExpand"
+                               Text=">"
+                               FontSize="Title"/>
                     </StackLayout>
                 </StackLayout>
             </Grid>

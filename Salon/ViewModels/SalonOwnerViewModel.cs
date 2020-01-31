@@ -7,12 +7,14 @@ namespace Salon.ViewModels
 	class SalonOwnerViewModel : BaseViewModel
 	{
 		public CreateSalonAccountCommand CreateSalonAccountCommand { get; set; }
+		public UpLoadSalonProfileImageCommand UpLoadSalonProfileImageCommand { get; set; }
 
 
 		public SalonOwnerViewModel()
 		{
 			CreateSalonAccountCommand = new CreateSalonAccountCommand(this);
 			SalonOwnerAccount = new SalonOwnerAccount();
+			UpLoadSalonProfileImageCommand = new UpLoadSalonProfileImageCommand(this);
 		}
 
 		private SalonOwnerAccount salonOwnerAccount;
@@ -73,6 +75,12 @@ namespace Salon.ViewModels
 		{
 			await App.Current.MainPage.Navigation.PushAsync(new SalonistAccountPage());
 		}
+		public  void UpLoadSalonProfileImage()
+		{
+			 DisplayAlert("Hello", "This page will be implemented", "Okay");
+		}
+
+
 
 
 	}

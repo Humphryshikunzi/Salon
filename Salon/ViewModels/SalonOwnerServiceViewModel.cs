@@ -9,12 +9,14 @@ namespace Salon.ViewModels
 {
 	class SalonOwnerServicesViewModel : BaseViewModel
 	{
+		public UpLoadServiceImageCommand UpLoadServiceImageCommand { get; set; }
 		public AddSalonOwnerServiceCommand AddSalonOwnerServiceCommand { get; set; }
 		public FinishedAddingServicesCommand FinishedAddingServicesCommand { get; set; }
 		public SalonOwnerServicesViewModel()
 		{
 			FinishedAddingServicesCommand = new FinishedAddingServicesCommand(this);
 			AddSalonOwnerServiceCommand = new AddSalonOwnerServiceCommand(this);
+			UpLoadServiceImageCommand = new UpLoadServiceImageCommand(this);
 			Services = new Services();
 		}
 
@@ -71,7 +73,10 @@ namespace Salon.ViewModels
 		{
 			await App.Current.MainPage.Navigation.PushAsync(new SalonOwnerProductsPage());
 		}
-
+		public  void UpLoadServiceImage()
+		{
+			DisplayAlert("Hello", "This page will be implemented", "Okay");
+		}
 
 
 	}

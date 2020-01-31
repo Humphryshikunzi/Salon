@@ -189,7 +189,7 @@
                                     <Grid Margin="0,0,8,0"
                                           WidthRequest="160">
                                         <StackLayout>
-                                            <Image Source="Salon 5"
+                                            <Image Source="Salon5"
                                                Aspect="AspectFill"
                                                    HeightRequest="160"/>
                                             <Label Text="Christoper Salon"
@@ -199,10 +199,10 @@
                                     <Grid Margin="0,0,8,0"
                                           WidthRequest="160">
                                         <StackLayout>
-                                            <Image Source="Salon6"
+                                            <Image Source="Salon6.jpg"
                                                Aspect="AspectFill"
                                                    HeightRequest="160"/>
-                                            <Label Text="Christoper Salon"
+                                            <Label Text="Chemtai Salon"
                                                    HorizontalTextAlignment="Center"/>
                                         </StackLayout>
                                     </Grid>

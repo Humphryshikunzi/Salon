@@ -9,5 +9,6 @@ namespace Salon.Models
         public int Id { get; set; }
         public string Service { get; set; }
         public decimal Charge { get; set; }
+        public  string  ServiceImageUri { get; set; }
     }
 }

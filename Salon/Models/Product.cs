@@ -10,5 +10,6 @@ namespace Salon.Models
         public string ProductName { get; set; }
         public string ProductImageUri { get; set; }
         public decimal Price { get; set; }
+      
     }
 }

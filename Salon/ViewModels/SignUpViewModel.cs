@@ -138,6 +138,10 @@ namespace Salon.ViewModels
             {
                 await App.Current.MainPage.Navigation.PushAsync(new SalonOwnerPage());
             }
+            else if (modeOfSignUp == "Salonist")
+            {
+                await App.Current.MainPage.Navigation.PushAsync(new SalonistAccountPage());
+            }
             else
             {
                 await App.Current.MainPage.Navigation.PushAsync(new HomePage());

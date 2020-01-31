@@ -10,5 +10,7 @@ namespace Salon.Models
         public string NameOfSalon { get; set; }
         public string City { get; set; }
         public int NumberOfSalonists { get; set; }
+        public  string  SalonImageUri { get; set; }
+        public  int  NoOfDayWorkingHours { get; set; }
     }
 }

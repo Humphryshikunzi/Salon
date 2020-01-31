@@ -14,8 +14,17 @@
         <StackLayout Margin="8"
                      VerticalOptions="CenterAndExpand">
             <Label Text="Tell us the Services that your Salon offers so that we can direct the right Customers to you."/>
-            <Entry Placeholder="Enter Service"
-                   Text="{Binding Service, Mode=TwoWay}"/>
+            <StackLayout Orientation="Horizontal">
+                <Entry Placeholder="Enter Service"
+                   Text="{Binding Service, Mode=TwoWay}"
+                       WidthRequest="200"/>
+                <Button Text="UpLoad Image"
+                        WidthRequest="150"
+                        BackgroundColor="LightGray"
+                        Command="{Binding UpLoadServiceImageCommand}"/>
+            </StackLayout>
+                
+            
             <Label Text="Charge for the Service(Ksh.)"
                    FontSize="Large"/>
             <Entry Placeholder="Charge(KSh.)"

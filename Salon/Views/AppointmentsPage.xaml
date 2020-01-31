@@ -4,12 +4,79 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Salon.Views.AppointmentsPage">
+             x:Class="Salon.Views.AppointmentsPage"
+             Title="Appointments">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView HorizontalScrollBarVisibility="Never"
+                    VerticalScrollBarVisibility="Never">
+            <StackLayout Margin="8">
+                <TableView HasUnevenRows="True">
+                    <TableSection>
+                        <ViewCell>
+                            <StackLayout >
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Popular Salonists"
+                                           HorizontalOptions="Start"
+                                           FontSize="Large"/>
+                                    <Label Text="See All"
+                                           HorizontalOptions="EndAndExpand"
+                                           FontSize="Large"
+                                           Margin="0,0,8,0">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </StackLayout>
+                                <StackLayout 
+                                             Margin="0,0,0,40"
+                                             >
+                                    <Grid Margin="0,0,5,0">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="Salonist1"
+                                                   Aspect="AspectFill"
+                                                    HeightRequest="100"
+                                                    WidthRequest="180"/>
+                                            <Label Text="Christine "
+                                                   HorizontalTextAlignment="Center"/>
+                                        </StackLayout>
+                                    </Grid>
+                                    <Grid Margin="0,0,5,0">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="Salonist2"
+                                                   Aspect="AspectFit"
+                                                   HeightRequest="100"
+                                                   WidthRequest="180"/>
+                                            <Label Text="Julliet"
+                                                    HorizontalTextAlignment="Center"/>
+                                        </StackLayout>
+                                    </Grid>
+                                    <Grid Margin="0,0,5,0">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="Salonist3"
+                                                    Aspect="AspectFill"
+                                                    HeightRequest="100"
+                                                   WidthRequest="180"/>
+                                            <Label Text="Esther"
+                                                   HorizontalTextAlignment="Center"/>
+                                        </StackLayout>
+                                    </Grid>
+                                    <Grid>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="Salonist4"
+                                               Aspect="AspectFill"
+                                               HeightRequest="100"
+                                                WidthRequest="180"/>
+                                            <Label Text="Annet "
+                                                    HorizontalTextAlignment="Center"/>
+                                        </StackLayout>
+                                    </Grid>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableView>
+            </StackLayout>
+        </ScrollView>
+
     </ContentPage.Content>
 </ContentPage>

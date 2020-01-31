@@ -6,7 +6,9 @@
              mc:Ignorable="d"
              x:Class="Salon.Views.HomePage"
             xmlns:localViews="clr-namespace:Salon.Views"
-            Title="Salon">
+            Title="Salon"
+            NavigationPage.HasBackButton="False"
+            >
     <localViews:SearchPage Title="Search"/>
     <localViews:OrderPage Title="Orders"/>
     <localViews:FavoritesPage Title="Favor.."/>

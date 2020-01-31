@@ -6,7 +6,9 @@
              mc:Ignorable="d"
              x:Class="Salon.Views.FavoritesPage"
              Title="Favorites"
-             xmlns:localViewModel="clr-namespace:Salon.ViewModels">
+             xmlns:localViewModel="clr-namespace:Salon.ViewModels"
+             >
+    
     <ContentPage.BindingContext>
         <localViewModel:FavoritesViewModel/>
     </ContentPage.BindingContext>
@@ -46,10 +48,9 @@
                                     <Image Source="Salon6"
                                                    Aspect="AspectFill"
                                                    HeightRequest="160"/>
-                                    <Label Text="Christoper Salon"
+                                    <Label Text="Chemutai Salon"
                                                    HorizontalTextAlignment="Center"/>
                                 </StackLayout>
-
                             </StackLayout>
                         </ViewCell>
                     </TableSection>

@@ -12,5 +12,6 @@ namespace Salon.Models
         public string Password { get; set; }
         public string ModeOfSignUp { get; set; }
         public bool IsTermsAndConditionsCheckBoxChecked { get; set; }
+        public string ProfileImageUri { get; set; }
     }
 }

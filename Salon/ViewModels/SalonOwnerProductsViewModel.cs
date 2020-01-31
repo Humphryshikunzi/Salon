@@ -83,7 +83,7 @@ namespace Salon.ViewModels
         }
         public void UpLoadProducImage()
         {
-
+            DisplayAlert("Hello", "This page will be implemented", "Okay");
         }
         public async void AddProduct()
         {
