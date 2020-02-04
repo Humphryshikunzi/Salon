@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Plugin.Permissions;
 using Plugin.CurrentActivity;
+using System.IO;
 
 namespace Salon.Droid
 {
@@ -24,7 +25,12 @@ namespace Salon.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
-            LoadApplication(new App());
+
+            var database = "salon.sqlite";
+            var path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            var fullpath = Path.Combine(path, database);
+
+            LoadApplication(new App(fullpath));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

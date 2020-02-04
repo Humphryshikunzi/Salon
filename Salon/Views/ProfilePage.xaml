@@ -32,7 +32,8 @@
             <Grid Grid.Row="0">
                 <StackLayout HorizontalOptions="EndAndExpand"
                              VerticalOptions="EndAndExpand">
-                    <Label Text="Edit"/>
+                    <Label Text="Edit"
+                           TextColor="White"/>
 
                 </StackLayout>
 

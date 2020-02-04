@@ -4,6 +4,9 @@ using Salon.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using Xamarin.Forms;
+using SQLite;
 
 namespace Salon.ViewModels
 {
@@ -20,6 +23,9 @@ namespace Salon.ViewModels
             FinishedAddingProductsCommand = new FinishedAddingProductsCommand(this);
             Product = new Product();
         }
+
+        public  Image  Image { get; set; }
+
         private Product product;
 
         public Product Product
@@ -81,14 +87,28 @@ namespace Salon.ViewModels
         {
             await App.Current.MainPage.Navigation.PushAsync(new HomePage());
         }
-        public void UpLoadProducImage()
-        {
-            DisplayAlert("Hello", "This page will be implemented", "Okay");
-        }
+       
         public async void AddProduct()
         {
+            var product = new Product()
+            {
+                ProductName = ProductName,
+                Price = Price,
+                ProductImageUri = await UpLoadProductImage()
+            };
+            using (var conn = new SQLiteConnection(App.Databasepath))
+            {
+                conn.Insert(product);
+            }
             await App.Current.MainPage.Navigation.PushAsync(new HomePage());
         }
+
+        public async Task<string> UpLoadProductImage()
+        {
+            return await PickAndUpLoadImage(Image, "Product");
+        }
+
+
 
 
 

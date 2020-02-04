@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace Salon.Models
 {
@@ -12,5 +13,6 @@ namespace Salon.Models
         public int NumberOfSalonists { get; set; }
         public  string  SalonImageUri { get; set; }
         public  int  NoOfDayWorkingHours { get; set; }
+        public  Image  Image { get; set; }
     }
 }

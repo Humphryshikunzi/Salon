@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace Salon.Models
 {
@@ -10,6 +11,8 @@ namespace Salon.Models
         public string ProductName { get; set; }
         public string ProductImageUri { get; set; }
         public decimal Price { get; set; }
-      
+
+        public  Image  Image { get; set; }
+
     }
 }

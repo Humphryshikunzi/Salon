@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 using Foundation;
@@ -23,7 +24,12 @@ namespace Salon.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+
+            var database = "salon.sqlite";
+            var path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            var fullpath = Path.Combine(path, database);
+
+            LoadApplication(new App(fullpath));
 
             return base.FinishedLaunching(app, options);
         }

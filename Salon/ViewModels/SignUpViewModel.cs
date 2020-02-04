@@ -4,6 +4,7 @@ using Salon.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using SQLite;
 
 namespace Salon.ViewModels
 {
@@ -125,7 +126,7 @@ namespace Salon.ViewModels
 
         public async void  AddCustomer()
         {
-            var signUpValues = new SignUp()
+            var signUp = new SignUp()
             {
                 Name = Name,
                 Email = Email,
@@ -134,6 +135,11 @@ namespace Salon.ViewModels
                 IsTermsAndConditionsCheckBoxChecked = IsTermsAndConditionsCheckBoxChecked
             };
             // Send to Database SQlite and Azure
+            using (var conn = new SQLiteConnection(App.Databasepath))
+            {
+                conn.Insert(signUp);
+
+            }
             if (modeOfSignUp == "Salon Owner")
             {
                 await App.Current.MainPage.Navigation.PushAsync(new SalonOwnerPage());
@@ -150,6 +156,7 @@ namespace Salon.ViewModels
         }
         public async void SignIn()
         {
+            //To be implemented
             await App.Current.MainPage.Navigation.PushAsync(new HomePage());
         }
         public void CheckPolicy()

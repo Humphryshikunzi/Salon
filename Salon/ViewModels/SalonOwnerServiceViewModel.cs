@@ -4,6 +4,10 @@ using Salon.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using SQLite;
+using Xamarin.Forms;
+using System.Threading.Tasks;
+using SQLite;
 
 namespace Salon.ViewModels
 {
@@ -19,6 +23,7 @@ namespace Salon.ViewModels
 			UpLoadServiceImageCommand = new UpLoadServiceImageCommand(this);
 			Services = new Services();
 		}
+		public  Image  Image { get; set; }
 
 		private Services services;
 
@@ -67,15 +72,25 @@ namespace Salon.ViewModels
 		}
 		public async void AddService()
 		{
+			var service = new Services()
+			{
+				Service = Service,
+				Charge = Charge,
+				ServiceImageUri = await UpLoadServiceImage()
+			};
+			using (var conn = new SQLiteConnection(App.Databasepath))
+			{
+				conn.Insert(service);
+			}
 			await App.Current.MainPage.Navigation.PushAsync(new SalonOwnerProductsPage());
 		}
 		public async void FinishedAddingServices()
 		{
 			await App.Current.MainPage.Navigation.PushAsync(new SalonOwnerProductsPage());
 		}
-		public  void UpLoadServiceImage()
+		public async Task<string> UpLoadServiceImage()
 		{
-			DisplayAlert("Hello", "This page will be implemented", "Okay");
+			return await PickAndUpLoadImage(Image, "Service");
 		}
 
 

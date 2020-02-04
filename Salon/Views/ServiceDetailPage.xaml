@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Salon.Views.ServiceDetailPage"
+             Title="Stylists">
+    <ContentPage.Content>
+        <StackLayout Margin="8">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Hair Styling"
+                       FontSize="Large"/>
+                <Label Text=""
+                       FontSize="Large"
+                       HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout WidthRequest="160">
+                    <Label Text="Haircut"/>
+                    <Label Text="30 minutes"/>
+                </StackLayout>
+                <Label Text="Fee: Ksh"
+                       />
+                <Label Text="200"/>
+                <CheckBox
+                    IsChecked="True"
+                    HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Face and Skin"
+                       FontSize="Large"
+                       VerticalOptions="Center"/>
+                <Label Text=">"
+                       FontSize="Title"
+                       HorizontalOptions="EndAndExpand">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Body Massage"
+                       FontSize="Large"
+                       VerticalOptions="Center"/>
+                <Label Text=">"
+                       FontSize="Title"
+                       HorizontalOptions="EndAndExpand">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Manicure"
+                       FontSize="Large"
+                       VerticalOptions="Center"/>
+                <Label Text=">"
+                       FontSize="Title"
+                       HorizontalOptions="EndAndExpand">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Bridal"
+                       FontSize="Large"
+                       VerticalOptions="Center"/>
+                <Label Text=">"
+                       FontSize="Title"
+                       HorizontalOptions="EndAndExpand">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Total:"/>
+                <Label Text="3"/>
+                <Label Text="Services"/>
+                <Label Text="KSh"
+                       HorizontalOptions="EndAndExpand"/>
+                <Label Text="500.00"
+                       HorizontalOptions="End"
+                       />
+            </StackLayout>
+            <Button Text="Book Service"
+                    VerticalOptions="EndAndExpand"
+                    
+                    />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

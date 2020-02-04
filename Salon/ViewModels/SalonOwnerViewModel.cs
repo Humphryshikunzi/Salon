@@ -1,6 +1,9 @@
 ﻿using Salon.Commands;
 using Salon.Models;
 using Salon.Views;
+using System.Threading.Tasks;
+using Xamarin.Forms;
+using SQLite;
 
 namespace Salon.ViewModels
 {
@@ -70,15 +73,36 @@ namespace Salon.ViewModels
 			}
 		}
 
+		private  Image  image;
+
+		public  Image  Image
+		{
+			get { return  image; }
+			set {  image = value; }
+		}
+
+
 
 		public async void CreateSalonAccount()
 		{
+			var salonOwner = new SalonOwnerAccount()
+			{
+				NameOfSalon = NameOfSalon,
+				NumberOfSalonists = NumberOfSalonists,
+				City = City,
+				SalonImageUri = await UpLoadSalonProfileImage()
+			};
+			using (var conn = new SQLiteConnection(App.Databasepath))
+			{
+				conn.Insert(salonOwner);
+			}
 			await App.Current.MainPage.Navigation.PushAsync(new SalonistAccountPage());
 		}
-		public  void UpLoadSalonProfileImage()
+		public  Task<string> UpLoadSalonProfileImage()
 		{
-			 DisplayAlert("Hello", "This page will be implemented", "Okay");
-		}
+			
+			return PickAndUpLoadImage(Image, "Salon");
+;		}
 
 
 

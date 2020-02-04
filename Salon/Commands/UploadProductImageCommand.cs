@@ -20,9 +20,9 @@ namespace Salon.Commands
             return true;
         }
 
-        public void Execute(object parameter)
+        public async void Execute(object parameter)
         {
-            SalonOwnerProductsViewModel.UpLoadProducImage();
+          await SalonOwnerProductsViewModel.UpLoadProductImage();
         }
     }
 }

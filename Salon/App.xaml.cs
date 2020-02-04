@@ -2,16 +2,20 @@
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Salon.Helpers;
 
 namespace Salon
 {
     public partial class App : Application
     {
-        public App()
+        public static string Databasepath;
+        public App(string databasepath)
         {
             InitializeComponent();
-
+            Databasepath = databasepath;
+            CreateDatabases.Create();
             MainPage = new  SplashscreenPage();
+
         }
 
         protected override void OnStart()
